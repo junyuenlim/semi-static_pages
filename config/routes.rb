@@ -1,4 +1,10 @@
 SemiStatic::Application.routes.draw do
+  resources :pages, except: :show
+
+  get ':id', to: 'pages#show', as: :page
+  root :to => 'pages#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
